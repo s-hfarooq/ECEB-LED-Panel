@@ -2,8 +2,7 @@
 
 cd /home/pi/ECEB-LED-Panel
 
-nohup ./runCmd.sh &
-echo $! > pid_out
+./runCmd.sh
 
 while true
 do
@@ -18,8 +17,7 @@ do
             # restart script
             pidVal=$(<pid_out)
             kill $pidVal
-            nohup ./runCmd.sh &
-            echo $! > pid_out
+            ./runCmd.sh
             echo
         else
             echo -e ${FINISHED}Current branch is up to date with origin/master.${NOCOLOR}
