@@ -13,7 +13,6 @@ do
             echo -e ${ERROR}Not up to date with origin. Aborting.${NOCOLOR}
             git pull
             echo
-            exit 0
         else
             echo -e ${FINISHED}Current branch is up to date with origin/master.${NOCOLOR}
     fi
