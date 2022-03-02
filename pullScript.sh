@@ -15,8 +15,7 @@ do
             echo -e ${ERROR}Not up to date with origin. Pulling.${NOCOLOR}
             git pull
             # restart script
-            pidVal=$(<pid_out)
-            kill $pidVal
+            ps -ef | grep /home/pi/rpi-rgb-led-matrix/examples-api-use/demo | grep -v grep | awk '{print $2}' | sudo xargs kill
             ./runCmd.sh
             echo
         else
